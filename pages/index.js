@@ -22,7 +22,17 @@ export default function Home({ allPostsData }) {
 
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>ASCSN Resources | </h2>
+        <Link href='https://forum.ascsn.net'>Forum</Link> | <Link href='https://github.com/ascsn'>GitHub</Link>
+        {/* <ul className={utilStyles.list}>
+          <li className={utilStyles.listItem}>
+            <Link href='https://forum.ascsn.net'>Forum</Link>
+          </li>
+          <li className={utilStyles.listItem}>
+            <Link href='https://github.com/ascsn'>GitHub</Link>
+          </li>
+        </ul> */}
+        <h2 className={utilStyles.headingLg}>Blog |</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
