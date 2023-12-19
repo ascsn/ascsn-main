@@ -24,6 +24,7 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>ASCSN Resources | </h2>
         <Link href='https://forum.ascsn.net'>Forum</Link> | <Link href='https://github.com/ascsn'>GitHub</Link>
+        <br />
         <Link href='https://dr.ascsn.net'>Dimensionality Reduction Book</Link> | <Link href='https://qc.ascsn.net'>Quantum Computing Book</Link>
         {/* <ul className={utilStyles.list}>
           <li className={utilStyles.listItem}>
