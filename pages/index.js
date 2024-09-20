@@ -72,7 +72,7 @@ function DNP() {
         <h1>Welcome DNP Visitors!</h1>
         <p>
           This page is a special landing page for visitors to the 2024 Division of Nuclear Physics
-          meeting. The forum link to the discussion board for the meeting is <a href="https://forum.ascsn.net">here</a>.
+          meeting. The forum link to the discussion board for the meeting is <a href="https://forum.ascsn.net/t/about-the-lifting-the-shadows-category/309">here</a>.
           
         </p>
       </section>
