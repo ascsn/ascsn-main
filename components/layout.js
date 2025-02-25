@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import utilStyles from '../styles/utils.module.css'
 
 const name = 'ASCSN'
 export const siteTitle = 'Advanced Scientific Computing and Statistics Network'
@@ -14,8 +14,9 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Homepage for the Advanced Scientific Computing and Statistics Network -- a community effort to lower the barrier to entry for scientific advancement"
+          content="Welcome to the Advanced Scientific Computing and Statistics Network, where we foster collaborations and build connections in computational science, statistics, and applied mathematics."
         />
+        <meta name="keywords" content="computational science, statistics, applied mathematics, scientific community, research, collaboration" />
         <meta name="og:title" content={siteTitle} />
       </Head>
       <header className={styles.header}>
@@ -30,21 +31,12 @@ export default function Layout({ children, home }) {
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <p className={styles.tagline}>Connecting Science and Innovation</p>
           </>
         ) : (
           <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.png"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+              <Link href="/" className={styles.colorInherit}>
                 {name}
               </Link>
             </h2>
