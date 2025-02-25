@@ -50,3 +50,13 @@
 .borderCircle {
   border-radius: 50%;
 }
+
+.list a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.list a:hover {
+  text-decoration: underline;
+}

@@ -7,3 +7,21 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: rgb(65, 65, 65);
 }
+
+/* Style for list items with icons */
+.iconWrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px; /* This creates consistent spacing between icon and text */
+  }
+  
+  /* Ensure icons have a consistent width */
+  .iconWrapper i {
+    width: 20px;
+    text-align: center;
+  }
+  
+  /* Add hover effect */
+  .iconWrapper:hover {
+    opacity: 0.8;
+  }

@@ -30,9 +30,9 @@ export default function Home({ allPostsData }) {
           promote accessibility and lower the barrier to get involved with cutting edge research.
         </p>
         <p>
-          Join us in our mission to advance scientific computing and statistics. Explore our resources, participate in our forums, and connect with like-minded individuals to drive innovation and discovery.
+          Join us in our mission to advance scientific computing and statistics. Explore our resources,
+          participate in our forums, and connect with like-minded individuals to drive innovation and discovery.
         </p>
-
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -40,17 +40,26 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           <li className={utilStyles.listItem}>
             <Link href='https://forum.ascsn.net'>
-              Forum
+              <span className={customStyles.iconWrapper}>
+                <i className="fa-regular fa-comments"></i>
+                <span>Forum</span>
+              </span>
             </Link>
           </li>
           <li className={utilStyles.listItem}>
             <Link href='https://github.com/ascsn'>
-              GitHub
+              <span className={customStyles.iconWrapper}>
+                <i className="fab fa-github"></i>
+                <span>GitHub</span>
+              </span>
             </Link>
           </li>
           <li className={utilStyles.listItem}>
             <Link href='https://www.youtube.com/@ASCSN-channel'>
-              YouTube
+              <span className={customStyles.iconWrapper}>
+                <i className="fab fa-youtube"></i>
+                <span>YouTube</span>
+              </span>
             </Link>
           </li>
         </ul>
@@ -58,12 +67,18 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           <li className={utilStyles.listItem}>
             <Link href='https://dr.ascsn.net'>
-              Dimensionality Reduction Book
+              <span className={customStyles.iconWrapper}>
+                <i className="fa-solid fa-chart-line"></i>
+                <span>Dimensionality Reduction Book</span>
+              </span>
             </Link>
           </li>
           <li className={utilStyles.listItem}>
             <Link href='https://qc.ascsn.net'>
-              Quantum Computing Book
+              <span className={customStyles.iconWrapper}>
+                <i className="fa-solid fa-atom"></i>
+                <span>Quantum Computing Book</span>
+              </span>
             </Link>
           </li>
         </ul>
@@ -71,7 +86,12 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+              <Link href={`/posts/${id}`}>
+                <span className={customStyles.iconWrapper}>
+                  <i className="fa-regular fa-file-lines"></i>
+                  <span>{title}</span>
+                </span>
+              </Link>
               <br />
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
@@ -79,29 +99,28 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
-    </Layout>
+      </section>    </Layout>
   )
 }
 
 function DNP() {
   return (
-      <section className={customStyles.dnpbox}>
-        <h1>Welcome DNP Visitors!</h1>
-        <p>
-          This page is a special landing page for visitors to the 2024 Division of Nuclear Physics
-          meeting. The forum link to the discussion board for the meeting is <a href="https://forum.ascsn.net/t/about-the-lifting-the-shadows-category/309">here</a>.
-        </p>
-        <p>
-          We are excited to have you join us and explore the various resources and discussions available. Feel free to participate in the forums, ask questions, and connect with other attendees.
-        </p>
-        <p>
-          Don't forget to check out our <a href="https://ascsn.net/resources">resources page</a> for more information and materials related to the conference.
-        </p>
-        <p>
-          Additionally, you can find the schedule of events and important announcements on our <a href="https://ascsn.net/events">events page</a>.
-        </p>
-      </section>
+    <section className={customStyles.dnpbox}>
+      <h1>Welcome DNP Visitors!</h1>
+      <p>
+        This page is a special landing page for visitors to the 2024 Division of Nuclear Physics
+        meeting. The forum link to the discussion board for the meeting is <a href="https://forum.ascsn.net/t/about-the-lifting-the-shadows-category/309">here</a>.
+      </p>
+      <p>
+        We are excited to have you join us and explore the various resources and discussions available. Feel free to participate in the forums, ask questions, and connect with other attendees.
+      </p>
+      <p>
+        Don't forget to check out our <a href="https://ascsn.net/resources">resources page</a> for more information and materials related to the conference.
+      </p>
+      <p>
+        Additionally, you can find the schedule of events and important announcements on our <a href="https://ascsn.net/events">events page</a>.
+      </p>
+    </section>
   )
 }
 
