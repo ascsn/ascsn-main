@@ -6,7 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "date-fns": "^2.29.3",
+    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
