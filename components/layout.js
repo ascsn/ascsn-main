@@ -2,8 +2,6 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import Link from 'next/link'
-import Image from 'next/image'
 import utilStyles from '../styles/utils.module.css'
 
 const name = 'ASCSN'
@@ -24,9 +22,7 @@ export default function Layout({ children, home }) {
         <meta
           name="description"
           content="Welcome to the Advanced Scientific Computing and Statistics Network, where we foster collaborations and build connections in computational science, statistics, and applied mathematics."
-          content="Welcome to the Advanced Scientific Computing and Statistics Network, where we foster collaborations and build connections in computational science, statistics, and applied mathematics."
         />
-        <meta name="keywords" content="computational science, statistics, applied mathematics, scientific community, research, collaboration" />
         <meta name="keywords" content="computational science, statistics, applied mathematics, scientific community, research, collaboration" />
         <meta name="og:title" content={siteTitle} />
       </Head>
@@ -42,7 +38,6 @@ export default function Layout({ children, home }) {
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
-            <p className={styles.tagline}>Connecting Science and Innovation</p>
             <p className={styles.tagline}>Connecting Science and Innovation</p>
           </>
         ) : (
