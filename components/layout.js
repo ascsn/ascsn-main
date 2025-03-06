@@ -25,6 +25,26 @@ export default function Layout({ children, home }) {
         />
         <meta name="keywords" content="computational science, statistics, applied mathematics, scientific community, research, collaboration" />
         <meta name="og:title" content={siteTitle} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ascsn.net/" />
+        <meta property="og:image" content="https://ascsn.net/images/profile.png" />
+        <meta property="og:description" content="Welcome to the Advanced Scientific Computing and Statistics Network, where we foster collaborations and build connections in computational science, statistics, and applied mathematics." />
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Advanced Scientific Computing and Statistics Network",
+            "url": "https://ascsn.net",
+            "logo": "https://ascsn.net/images/profile.png",
+            "sameAs": [
+              "https://forum.ascsn.net",
+              "https://github.com/ascsn",
+              "https://www.youtube.com/@ASCSN-channel"
+            ]
+          }
+          `}
+        </script>
       </Head>
       <header className={styles.header}>
         {home ? (

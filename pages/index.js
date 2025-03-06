@@ -20,6 +20,7 @@ export default function Home({ allPostsData }) {
         currentUrl.indexOf("DNP2024") > -1 ? DNP() : null
       }
       <section className={utilStyles.headingMd}>
+        <h1>Welcome to ASCSN</h1>
         <p>
           Welcome to the <strong>Advanced Scientific Computing and Statistics Network</strong> landing
           page! The primary purpose of <strong>ASCSN</strong> is to
