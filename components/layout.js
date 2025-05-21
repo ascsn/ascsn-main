@@ -95,7 +95,6 @@ export default function Layout({ children, home }) {
           <li className={styles.navItem}><a href="https://forum.ascsn.net" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>Community</a></li>
           <li className={styles.navItem}><Link href="/#resources"><a onClick={handleLinkClick}>Resources</a></Link></li>
           <li className={styles.navItem}><Link href="/news"><a onClick={handleLinkClick}>News</a></Link></li>
-          <li className={styles.navItem}><Link href="/#blog-highlights"><a onClick={handleLinkClick}>Blog</a></Link></li>
         </ul>
         <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}>
           <i className={menuOpen ? "fas fa-times" : "fas fa-bars"}></i>

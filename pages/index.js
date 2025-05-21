@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import { getSortedNewsData } from '../lib/news' // Import news data function
+import { getSortedNewsData } from '../lib/news'
 import Link from 'next/link'
 import Date from '../components/date'
 import { useRouter } from 'next/router';
 import customStyles from '../styles/custom.module.css'
 
-export default function Home({ allPostsData, latestNewsData }) { // Add latestNewsData to props
+export default function Home({ latestNewsData }) {
   const router = useRouter();
   const currentUrl = router.asPath;
 
@@ -93,39 +92,6 @@ export default function Home({ allPostsData, latestNewsData }) { // Add latestNe
         </div>
       </section>
 
-      {/* Latest News Section */}
-      <section id="news-preview" className={`${customStyles.sectionContainer} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Latest News</h2>
-        {latestNewsData && latestNewsData.length > 0 ? (
-          <>
-            <ul className={`${utilStyles.list} ${customStyles.newsList}`}>
-              {latestNewsData.map(({ id, date, title }) => (
-                <li className={`${utilStyles.listItem} ${customStyles.newsListItem}`} key={id}>
-                  <Link href={`/news/${id}`}>
-                    <a>
-                      <h3 className={customStyles.newsTitle}>{title}</h3>
-                    </a>
-                  </Link>
-                  <small className={utilStyles.lightText}>
-                    <Date dateString={date} />
-                  </small>
-                  {/* Snippet can be added if news markdown includes it in frontmatter */}
-                </li>
-              ))}
-            </ul>
-            <div className={customStyles.viewAllButtonContainer}>
-              <Link href="/news">
-                <a className={customStyles.ctaButton}>More News</a>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <div className={customStyles.placeholder}>
-            <p>No news updates at the moment. Check back soon!</p>
-          </div>
-        )}
-      </section>
-
       {/* Call to Action / Get Involved Section */}
       <section id="get-involved" className={`${customStyles.sectionContainer} ${customStyles.ctaSection} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Connect with ASCSN</h2>
@@ -142,15 +108,15 @@ export default function Home({ allPostsData, latestNewsData }) { // Add latestNe
         </div>
       </section>
 
-      {/* Blog Highlights Section */}
-      <section id="blog-highlights" className={`${customStyles.sectionContainer} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>From Our Blog</h2>
-        <ul className={`${utilStyles.list} ${customStyles.blogList}`}>
-          {allPostsData.slice(0, 3).map(({ id, date, title }) => ( // Displaying latest 3 posts
-            <li className={`${utilStyles.listItem} ${customStyles.blogListItem}`} key={id}>
-              <Link href={`/posts/${id}`}>
+      {/* News Highlights Section */}
+      <section id="news-highlights" className={`${customStyles.sectionContainer} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Latest News</h2>
+        <ul className={`${utilStyles.list} ${customStyles.newsList}`}>
+          {latestNewsData.map(({ id, date, title }) => (
+            <li className={`${utilStyles.listItem} ${customStyles.newsListItem}`} key={id}>
+              <Link href={`/news/${id}`}>
                 <a>
-                  <h3 className={customStyles.blogTitle}>{title}</h3>
+                  <h3 className={customStyles.newsTitle}>{title}</h3>
                 </a>
               </Link>
               <small className={utilStyles.lightText}>
@@ -160,13 +126,11 @@ export default function Home({ allPostsData, latestNewsData }) { // Add latestNe
             </li>
           ))}
         </ul>
-        {allPostsData.length > 3 && (
-          <div className={customStyles.viewAllButtonContainer}>
-            <Link href="/#blog-highlights">
-              <a className={customStyles.ctaButton}>View All Posts</a>
-            </Link>
-          </div>
-        )}
+        <div className={customStyles.viewAllButtonContainer}>
+          <Link href="/news">
+            <a className={customStyles.ctaButton}>View All News</a>
+          </Link>
+        </div>
       </section>
     </Layout>
   )
@@ -194,13 +158,11 @@ function DNP() {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
   const allNewsData = getSortedNewsData() // Fetch all news data
   const latestNewsData = allNewsData.slice(0, 3) // Get the latest 3 news items
 
   return {
     props: {
-      allPostsData,
       latestNewsData // Pass latest news data to props
     }
   }

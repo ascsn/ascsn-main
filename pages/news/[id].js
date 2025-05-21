@@ -26,8 +26,7 @@ export default function NewsPost({ newsData }) {
     <Layout>
       <Head>
         <title>{newsData.title}</title>
-        {/* Add meta description if available in frontmatter */}
-        {/* <meta name="description" content={newsData.metaDescription} /> */}
+        <meta name="description" content={newsData.metaDescription} />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{newsData.title}</h1>

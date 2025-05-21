@@ -25,10 +25,10 @@ export default function NewsPage({ allNewsData }) {
         <h1 className={utilStyles.headingXl}>News Updates</h1>
         <ul className={utilStyles.list}>
           {allNewsData.map(({ id, date, title }) => (
-            <li className={`${utilStyles.listItem} ${customStyles.blogListItem}`} key={id}>
+            <li className={`${utilStyles.listItem} ${customStyles.newsListItem}`} key={id}>
               <Link href={`/news/${id}`}>
                 <a>
-                  <h3 className={customStyles.blogTitle}>{title}</h3>
+                  <h3 className={customStyles.newsTitle}>{title}</h3>
                 </a>
               </Link>
               <small className={utilStyles.lightText}>
