@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 20px;
+  line-height: 1.65;
+  font-size: 18px; /* Slightly adjusted base font size */
+  background-color: #f4f7f9; /* Light grey background for a softer look */
+  color: #333; /* Default text color */
 }
 
 * {
@@ -13,16 +17,23 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #007bff; /* Updated primary link color - a common bootstrap primary blue */
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500; /* Slightly less bold than before */
+  transition: color 0.15s ease-in-out;
 }
 
 a:hover {
+  color: #0056b3; /* Darker shade on hover */
   text-decoration: underline;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50; /* Darker, slightly desaturated blue for headings */
+  font-weight: 600; /* Consistent heading weight */
 }
