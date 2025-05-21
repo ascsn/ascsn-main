@@ -1,22 +1,156 @@
 .container {
-  max-width: 48rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  max-width: 60rem; /* Increased max-width for a wider layout */
+  padding: 0 1.5rem; /* Adjusted padding */
+  margin: 2rem auto 6rem; /* Adjusted top margin */
+  padding-top: 80px; /* Increased padding to account for taller navbar */
 }
 
-.header {
+/* Navbar styles */
+.navbar {
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #dee2e6; /* Softer border color */
+  padding: 0 1.5rem; /* Consistent padding with container */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px; /* Slightly taller navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.navbarBrand a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2c3e50; /* Dark heading color */
+}
+
+.navbarBrand img { /* Style for the logo image if you add one */
+  margin-right: 0.5rem;
+}
+
+.navbarName {
+  font-weight: 700; /* Inter Bold */
+  font-size: 1.35rem; /* Adjusted size */
+  margin-left: 0.5rem;
+  color: #2c3e50; /* Consistent with global heading color */
+}
+
+.navbarNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Vertically align nav items */
+}
+
+.navItem {
+  margin-left: 1.8rem; /* Slightly increased spacing */
+}
+
+.navItem a {
+  text-decoration: none;
+  color: #343a40; /* Dark grey for nav links */
+  font-weight: 500; /* Inter Medium */
+  font-size: 1rem; /* Standard nav link size */
+  transition: color 0.15s ease-in-out;
+}
+
+.navItem a:hover {
+  color: #007bff; /* Primary link color on hover */
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 1.6rem; /* Slightly larger icon */
+  color: #343a40; /* Consistent with nav items */
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem; /* Add some padding for easier clicking */
+}
+
+.header { /* Styles for the homepage hero header */
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 3rem 0; /* Add some padding */
+  text-align: center; /* Center align text */
 }
 
-.backToHome {
-  margin: 3rem 0 0;
+.header img { /* Profile image in hero */
+    margin-bottom: 1rem;
 }
 
 .tagline {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #555;
+  font-size: 1.3rem; /* Adjusted size */
+  font-weight: 300; /* Inter Light */
+  color: #495057; /* Softer grey */
   margin-top: 0.5rem;
+  max-width: 600px; /* Limit width of tagline for readability */
+}
+
+.backToHome {
+  margin: 3rem 0 1rem; /* Adjusted margin */
+  text-align: center; /* Center the link */
+}
+
+.backToHome a {
+  font-weight: 500; /* Inter Medium */
+}
+
+
+/* Responsive styles for navbar */
+@media (max-width: 768px) {
+  .container {
+    padding-top: 65px; /* Adjust padding for navbar height */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar {
+    padding: 0 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .navbarNav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 65px; /* Position below navbar */
+    left: 0;
+    padding: 1rem 0; /* Add some padding when expanded */
+    border-top: 1px solid #dee2e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Shadow for expanded menu */
+    z-index: 999; /* Ensure it's above content but below navbarBrand if needed */
+  }
+
+  .navbarNav.active {
+    display: flex;
+  }
+
+  .navItem {
+    margin: 0; /* Remove left margin */
+    width: 100%;
+  }
+
+  .navItem a {
+    display: block;
+    padding: 0.8rem 1rem; /* Make links take full width and add padding */
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1; /* Separator for nav items */
+  }
+  .navItem:last-child a {
+    border-bottom: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
