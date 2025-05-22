@@ -1,35 +1,42 @@
+/* Updated heading styles to align with Inter font and new palette */
 .heading2Xl {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+  font-size: 2.8rem; /* Slightly larger for more impact */
+  line-height: 1.25;
+  font-weight: 700; /* Inter bold */
+  letter-spacing: -0.03rem;
+  margin: 1.5rem 0;
+  color: #2c3e50; /* From global.css */
 }
 
 .headingXl {
-  font-size: 2rem;
+  font-size: 2.2rem; /* Adjusted size */
   line-height: 1.3;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+  font-weight: 700; /* Inter bold */
+  letter-spacing: -0.02rem;
+  margin: 1.25rem 0;
+  color: #2c3e50;
 }
 
 .headingLg {
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-size: 1.75rem; /* Adjusted size */
+  line-height: 1.35;
+  font-weight: 600; /* Inter semi-bold */
   margin: 1rem 0;
+  color: #2c3e50;
 }
 
 .headingMd {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  font-size: 1.3rem; /* Adjusted size */
+  line-height: 1.4;
+  font-weight: 600; /* Inter semi-bold */
+  color: #2c3e50;
 }
 
 .colorInherit {
   color: inherit;
 }
 
-.padding1px {
+.padding1px { /* This can be useful for collapsing margins */
   padding-top: 1px;
 }
 
@@ -40,23 +47,24 @@
 }
 
 .listItem {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem; /* Slightly reduced bottom margin */
 }
 
 .lightText {
-  color: #666;
+  color: #5a6872; /* A softer, slightly desaturated grey */
+  font-size: 0.9rem; /* Slightly smaller for secondary text */
 }
 
 .borderCircle {
   border-radius: 50%;
 }
 
-.list a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
+/* Default link styling within lists is handled by global.css */
+/* Specific overrides for list links can be done if necessary, but avoid for consistency */
 
-.list a:hover {
-  text-decoration: underline;
+/* Example of a subtle separator line, if needed */
+.separator {
+  border-bottom: 1px solid #dee2e6; /* Light grey border */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

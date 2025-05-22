@@ -1,0 +1,137 @@
+/* Modern section headings with visual elements */
+.sectionHeading {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  z-index: 2;
+}
+
+.sectionHeading::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary, #3b82f6), var(--accent, #8b5cf6));
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.sectionHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 45px;
+  width: 10px;
+  height: 4px;
+  background: var(--secondary, #10b981);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.centeredHeading {
+  position: relative;
+  display: block;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+}
+
+.centeredHeading::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 40px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary, #3b82f6), var(--accent, #8b5cf6));
+  border-radius: 2px;
+  transform: translateX(-30px);
+  z-index: 1;
+}
+
+.centeredHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 10px;
+  height: 4px;
+  background: var(--secondary, #10b981);
+  border-radius: 2px;
+  transform: translateX(15px);
+  z-index: 1;
+}
+
+/* For sections with background decoration */
+.decoratedSection {
+  position: relative;
+  overflow: visible;
+}
+
+.decoratedSection::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(59, 130, 246, 0.05);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.decoratedSection::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  left: -70px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.05);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Animation for section content to fade in when scrolled to */
+.fadeIn {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.js .fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fadeIn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different delays for elements */
+.fadeDelay1 {
+  transition-delay: 0.1s;
+}
+
+.fadeDelay2 {
+  transition-delay: 0.2s;
+}
+
+.fadeDelay3 {
+  transition-delay: 0.3s;
+}

@@ -1,39 +1,34 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
-export default function Post({ postData }) {
+// This is a redirect component that will send users from old blog URLs to the news section
+export default function PostRedirect() {
+  const router = useRouter()
+  
+  useEffect(() => {
+    // Redirect to news page
+    router.replace('/news')
+  }, [router])
+
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
-    </Layout>
+    <div style={{ padding: '50px', textAlign: 'center' }}>
+      <h1>Redirecting...</h1>
+      <p>Our blog content has moved to the news section.</p>
+      <p>If you are not redirected automatically, <a href="/news">click here</a>.</p>
+    </div>
   )
 }
 
+// Use getStaticPaths to handle any old blog post IDs
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
   return {
-    paths,
-    fallback: false
+    paths: [],
+    fallback: 'blocking' // This ensures the redirect works for any path
   }
 }
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+export async function getStaticProps() {
   return {
-    props: {
-      postData
-    }
+    props: {}
   }
 }

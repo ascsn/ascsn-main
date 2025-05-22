@@ -1,0 +1,213 @@
+/* Additional animations for modern effects */
+
+/* Subtle floating animation for cards */
+@keyframes float-subtle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Tilt effect for interactive elements */
+@keyframes tilt {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Shimmer effect for gradient elements */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Ripple animation for button clicks */
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Glow effect for hover states */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Wave animation for sections */
+@keyframes wave {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+/* Animate CSS classes */
+.floatEffect {
+  animation: float-subtle 3s ease-in-out infinite;
+}
+
+.tiltEffect:hover {
+  animation: tilt 2s ease-in-out infinite;
+}
+
+.pulseEffect {
+  animation: pulse 2s infinite;
+}
+
+.shimmerEffect {
+  position: relative;
+}
+
+.shimmerEffect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0));
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.rippleEffect {
+  position: relative;
+  overflow: hidden;
+}
+
+.rippleEffect:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 100%;
+  transform: scale(1) translate(-50%, -50%);
+  opacity: 0;
+  animation: ripple 0.8s ease-out;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glowEffect {
+  position: relative;
+}
+
+.glowEffect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glowEffect:hover::after {
+  animation: glow 1.5s infinite;
+  opacity: 1;
+}
+
+.waveEffect {
+  position: relative;
+}
+
+.waveEffect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 50%, rgba(59, 130, 246, 0.05) 100%);
+  background-size: 200% 100%;
+  animation: wave 15s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Gradient text effect */
+.gradientText {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  padding-right: 5px; /* Prevents clipping in some browsers */
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effect with scale */
+.scaleOnHover {
+  transition: transform 0.3s ease;
+}
+
+.scaleOnHover:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth fade transition for navigation */
+.fadeTransition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fadeTransition.out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fadeTransition.in {
+  opacity: 1;
+  transform: translateY(0);
+}

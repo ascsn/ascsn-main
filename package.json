@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && echo '/.well-known/matrix/* https://matrix.ascsn.net/.well-known/matrix/:splat 200!' | cat >.next/_redirects ",
-    "start": "next start"
+    "start": "next start",
+    "cms:dev": "outstatic dev",
+    "cms:build": "outstatic build && next build",
+    "cms:start": "next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -14,9 +17,16 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "next": "latest",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "outstatic": "^2.0.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "root": "git+https://github.com/tanstack/react-query.git",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.5",
+    "typescript": "5.8.3"
   }
 }
