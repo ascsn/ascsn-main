@@ -115,31 +115,33 @@ export default function Layout({ children, home }) {
       <div className={styles.container}>
         {home && (
           <header className={styles.header}>
-            <div className={styles.headerContent}>
-              <Image
-                priority
-                src="/images/profile.png"
-                className={utilStyles.borderCircle}
-                height={160}
-                width={160}
-                alt={name}
-              />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
-              <p className={styles.tagline}>Connecting Science and Innovation</p>
-              <div className={styles.headerDivider}></div>
-              <p className={styles.headerDescription}>
-                A global community of researchers advancing the frontiers of computational science, 
-                statistics, and applied mathematics through collaboration.
-              </p>
-              <div className={styles.headerButtons}>
-                <a href="https://forum.ascsn.net" className={styles.primaryButton} target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faComments} /> Join the Community
-                </a>
-                <Link href="/#resources" className={styles.secondaryButton}>
-                  <FontAwesomeIcon icon={faBook} /> Explore Resources
-                </Link>
+            <div className={styles.headerCard}> {/* Added new wrapper div */}
+              <div className={styles.headerContent}>
+                <Image
+                  priority
+                  src="/images/profile.png"
+                  className={utilStyles.borderCircle}
+                  height={160}
+                  width={160}
+                  alt={name}
+                />
+                <h1 className={utilStyles.heading2Xl}>{name}</h1>
+                <p className={styles.tagline}>Innovation Through Connection</p>
+                {/* <div className={styles.headerDivider}></div> */}
+                <p className={styles.headerDescription}>
+                  A global community of researchers advancing the frontiers of computational science, 
+                  statistics, and applied mathematics through collaboration.
+                </p>
+                <div className={styles.headerButtons}>
+                  <a href="https://forum.ascsn.net" className={styles.primaryButton} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faComments} /> Join the Community
+                  </a>
+                  <Link href="/#resources" className={styles.secondaryButton}>
+                    <FontAwesomeIcon icon={faBook} /> Explore Resources
+                  </Link>
+                </div>
               </div>
-            </div>
+            </div> {/* Closing new wrapper div */}
             <div className={styles.headerVisual}>
               <div className={styles.shape1}></div>
               <div className={styles.shape2}></div>

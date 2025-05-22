@@ -52,13 +52,21 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.65;
   font-size: 16px;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary); /* Updated to light gray for smoother transition */
   color: var(--text-primary);
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Add responsive padding to container for wide screens */
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 * {
