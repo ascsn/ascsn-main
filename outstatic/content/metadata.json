@@ -1,0 +1,28 @@
+{
+  "commit": "",
+  "generated": "Thu, 22 May 2025 21:18:22 GMT",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "2697690394",
+        "path": "news/website-revamp.md"
+      },
+      "collection": "news",
+      "date": "2025-05-21",
+      "slug": "website-revamp",
+      "title": "Website Revamp: A New Era for ASCSN"
+    },
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "2154418092",
+        "path": "news/welcome-to-ascsn.md"
+      },
+      "collection": "news",
+      "date": "2023-06-01",
+      "slug": "welcome-to-ascsn",
+      "title": "Welcome to ASCSN"
+    }
+  ]
+}
