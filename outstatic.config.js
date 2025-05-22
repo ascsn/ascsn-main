@@ -1,6 +1,6 @@
 module.exports = {
   site: {
-    root: './pages/(cms)/outstatic',
+    root: './app/(cms)/outstatic',
     basePath: '/cms',
   },
   generate: {
