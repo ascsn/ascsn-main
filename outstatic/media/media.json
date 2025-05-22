@@ -1,7 +1,18 @@
 {
-  "commit": "",
-  "generated": "Thu, 22 May 2025 21:21:19 GMT",
+  "commit": "b45762d90b13f340004bde0a15f44ee18f8aea02",
+  "generated": "2025-05-22T21:21:21.761Z",
   "media": [
+    {
+      "__outstatic": {
+        "commit": "b45762d90b13f340004bde0a15f44ee18f8aea02",
+        "hash": "1715706332",
+        "path": "public/images/ascsn_logo-Q5Mz.png"
+      },
+      "alt": "",
+      "filename": "ascsn_logo-Q5Mz.png",
+      "publishedAt": "2025-05-22T21:21:21.759Z",
+      "type": "image"
+    },
     {
       "__outstatic": {
         "commit": "",
