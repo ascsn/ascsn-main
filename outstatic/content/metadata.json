@@ -1,6 +1,6 @@
 {
-  "commit": "",
-  "generated": "Thu, 22 May 2025 21:18:22 GMT",
+  "commit": "4b12b10273c1e4035ec339f2371452747c78c798",
+  "generated": "2025-05-22T21:18:49.850Z",
   "metadata": [
     {
       "__outstatic": {
@@ -15,13 +15,16 @@
     },
     {
       "__outstatic": {
-        "commit": "",
-        "hash": "2154418092",
+        "commit": "4b12b10273c1e4035ec339f2371452747c78c798",
+        "hash": "1566012769",
         "path": "news/welcome-to-ascsn.md"
       },
+      "author": null,
       "collection": "news",
       "date": "2023-06-01",
+      "publishedAt": "2025-05-22T20:54:26.372Z",
       "slug": "welcome-to-ascsn",
+      "status": "published",
       "title": "Welcome to ASCSN"
     }
   ]
