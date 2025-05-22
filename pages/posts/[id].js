@@ -8,7 +8,7 @@ export default function PostRedirect() {
   useEffect(() => {
     // Redirect to news page
     router.push('/news')
-  }, [])
+  }, [router])
 
   return (
     <div style={{ padding: '50px', textAlign: 'center' }}>
