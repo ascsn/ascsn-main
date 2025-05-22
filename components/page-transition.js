@@ -32,7 +32,7 @@ export default function PageTransition({ children }) {
   return (
     <>
       {loading && (
-        <div className={styles.loadingOverlay}>
+        <div className={styles.loadingOverlay} aria-live="assertive" aria-label="Loading, please wait">
           <div className={styles.loadingSpinner}>
             <div className={styles.spinnerRing}></div>
             <div className={styles.spinnerLogo}>ASCSN</div>
