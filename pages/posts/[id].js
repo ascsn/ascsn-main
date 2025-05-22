@@ -7,7 +7,7 @@ export default function PostRedirect() {
   
   useEffect(() => {
     // Redirect to news page
-    router.push('/news')
+    router.replace('/news')
   }, [router])
 
   return (
