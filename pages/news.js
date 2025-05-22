@@ -15,7 +15,9 @@ export async function getStaticProps() {
   return {
     props: {
       allNewsData
-    }
+    },
+    // Re-generate the page at most once every 60 seconds
+    revalidate: 60
   }
 }
 

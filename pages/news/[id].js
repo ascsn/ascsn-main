@@ -8,7 +8,8 @@ export async function getStaticPaths() {
   const paths = getAllNewsIds()
   return {
     paths,
-    fallback: false
+    // Allow ISR to generate new pages on-demand when articles go live
+    fallback: 'blocking'
   }
 }
 
@@ -17,7 +18,9 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       newsData
-    }
+    },
+    // Re-generate the page at most once every 60 seconds
+    revalidate: 60
   }
 }
 
