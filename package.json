@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && echo '/outstatic/* https://ascsn.net/outstatic/ 200!' | cat >.next/_redirects && echo '/.well-known/matrix/* https://matrix.ascsn.net/.well-known/matrix/:splat 200!' | cat >> .next/_redirects ",
+    "build": "next build && echo '/.well-known/matrix/* https://matrix.ascsn.net/.well-known/matrix/:splat 200!' | cat >> .next/_redirects ",
     "start": "next start",
     "cms:dev": "outstatic dev",
     "cms:build": "outstatic build && next build",
