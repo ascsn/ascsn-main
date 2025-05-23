@@ -132,6 +132,7 @@ export default function Home({ latestNewsData }) {
           </Link>
         </div>
       </section>
+
     </Layout>
   )
 }

@@ -17,12 +17,10 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "next": "latest",
-    "outstatic": "^2.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "root": "git+https://github.com/tanstack/react-query.git",
     "sharp": "^0.34.2"
   },
   "devDependencies": {
