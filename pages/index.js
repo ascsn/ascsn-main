@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script' // Import next/script
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedNewsData } from '../lib/news'
@@ -18,6 +19,15 @@ export default function Home({ latestNewsData }) {
   // Initialize scroll animations
   useEffect(() => {
     const cleanup = initScrollAnimations();
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
     return cleanup;
   }, []);
 
@@ -26,6 +36,10 @@ export default function Home({ latestNewsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <Script 
+        src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        strategy="beforeInteractive" // Or another strategy if more appropriate
+      />
       {
         currentUrl.indexOf("DNP2024") > -1 ? DNP() : null
       }
