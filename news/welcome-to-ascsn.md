@@ -1,6 +1,6 @@
 ---
 title: 'Welcome to ASCSN'
-date: '2023-06-01'
+date: '2023-06-01T00:00:00.000Z'
 ---
 
 I think it's appropriate to do a big

@@ -11,7 +11,9 @@ import animationStyles from '../styles/animations.module.css'
 import { initScrollAnimations } from '../lib/animation'
 
 export async function getStaticProps() {
-  const allNewsData = getSortedNewsData()
+  const allNewsData = getSortedNewsData().map(news => ({
+    ...news,
+  }));
   return {
     props: {
       allNewsData

@@ -4,9 +4,9 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedNewsData } from '../lib/news'
 import Link from 'next/link'
-import Date from '../components/date'
+import DateComponent from '../components/date' // Renamed to avoid conflict with global Date
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react'; // Ensure useState is imported
 import customStyles from '../styles/custom.module.css'
 import sectionStyles from '../styles/section-headings.module.css'
 import animationStyles from '../styles/animations.module.css'
@@ -14,22 +14,45 @@ import { initScrollAnimations } from '../lib/animation'
 
 export default function Home({ latestNewsData }) {
   const router = useRouter();
-  const currentUrl = router.asPath;
+  // const currentUrl = router.asPath; // Avoid using directly for conditional rendering that affects structure
 
-  // Initialize scroll animations
+  const [showDNP, setShowDNP] = useState(false);
+
   useEffect(() => {
-    const cleanup = initScrollAnimations();
+    if (router.isReady) {
+      if (router.asPath.indexOf("DNP2024") > -1) {
+        setShowDNP(true);
+      } else {
+        setShowDNP(false);
+      }
+    }
+  }, [router.isReady, router.asPath]);
+
+  // Initialize scroll animations & Netlify Identity
+  useEffect(() => {
+    const cleanupAnimations = initScrollAnimations();
+    
+    let identityCleanup = () => {};
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
+      const handleInit = (user) => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
             document.location.href = "/admin/";
           });
         }
-      });
+      };
+      window.netlifyIdentity.on("init", handleInit);
+      identityCleanup = () => {
+        window.netlifyIdentity.off("init", handleInit);
+        // Potentially .off("login") if it was attached conditionally, but here it's nested.
+      };
     }
-    return cleanup;
-  }, []);
+    
+    return () => {
+      cleanupAnimations();
+      identityCleanup();
+    };
+  }, []); // Runs once on client mount
 
   return (
     <Layout home>
@@ -41,7 +64,7 @@ export default function Home({ latestNewsData }) {
         strategy="beforeInteractive" // Or another strategy if more appropriate
       />
       {
-        currentUrl.indexOf("DNP2024") > -1 ? DNP() : null
+        showDNP ? DNP() : null // Use state variable for conditional rendering
       }
       {/* Hero Section (handled by Layout component with 'home' prop) */}
       {/* Introductory text below hero - refined */}
@@ -134,7 +157,7 @@ export default function Home({ latestNewsData }) {
                 <h3 className={customStyles.newsTitle}>{title}</h3>
               </Link>
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <DateComponent dateString={date} /> {/* Use renamed DateComponent */}
               </small>
               {/* Optional: Add a short snippet/excerpt here later */}
             </li>
@@ -176,7 +199,10 @@ function DNP() {
 
 export async function getStaticProps() {
   const allNewsData = getSortedNewsData() // Fetch all news data
-  const latestNewsData = allNewsData.slice(0, 3) // Get the latest 3 news items
+  const latestNewsData = allNewsData.slice(0, 3).map(news => ({
+    ...news,
+    // date is already a string from getSortedNewsData
+  })); 
 
   return {
     props: {

@@ -1,6 +1,6 @@
 ---
 title: 'Website Revamp: A New Era for ASCSN'
-date: '2025-05-21'
+date: '2025-05-21T00:00:00.000Z'
 ---
 
 # Website Revamp Complete

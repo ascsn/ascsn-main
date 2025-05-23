@@ -14,10 +14,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const newsData = await getNewsData(params.id)
+  const newsData = await getNewsData(params.id);
   return {
     props: {
-      newsData
+      newsData: {
+        ...newsData,
+      }
     },
     // Re-generate the page at most once every 60 seconds
     revalidate: 60
